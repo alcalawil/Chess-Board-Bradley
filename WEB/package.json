@@ -1,0 +1,11 @@
+{
+	"name": "alcalachess",
+	"version": "1.0.0",
+	"description": "Trabajo de grado wilfredo alcala",
+	"main": "index.js",
+	"author": "Wilfredo Alcala",
+	"dependencies": {
+		"express": "^4.16.2",
+		"socket.io": "^2.0.3"
+	}
+}

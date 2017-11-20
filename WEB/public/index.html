@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TDG - Ajedrez - UNY</title>
+  <script src="/js/chessboard-0.3.0.js"></script>
+  <script src="/js/chess.js"></script>
+  <script src="socket.io/socket.io.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/chessboard-0.3.0.css">
+  <script src="/js/jquery.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/flipclock.css">
+  <link rel="stylesheet" href="/css/materialize.min.css" />
+  <style type="text/css">
+  	.flex{
+  		display: flex;
+  	}
+
+  	.flex-center{
+  		justify-content: center;
+  	}
+
+  	body{
+  		background: #ddd;
+  	}
+
+  	.container{
+  		padding-top: 5%;
+  	}
+  </style>
+
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col s12 m6">
+				<div id="clockNegro" class="clock" style="margin:2em;"></div>
+        <br><br><br><br><br><br><br>
+          <input type="button" value ="Start" id="start">
+          <input type="button" value ="Pause" id="stop">
+        <br><br><br><br><br><br><br>
+
+        <div id="clockBlanco" class="clock" style="margin:2em;"></div>
+        <div class="row">
+          <div class="col s12 m6">
+            
+          </div>
+        </div>
+
+			</div>
+
+			<div class="col s12 m6">
+				<div class="contenedor-board">
+          <h2>Jugador 1</h2>
+					<div id="board" style="width: 400px">this</div>
+          <h2>Jugador 2</h2>
+					<h1>Orientación</h1>
+					<div class="switch" >
+					    <label>
+					      Blancas
+					      <input type="checkbox" id="switch">
+					      <span class="lever"></span>
+					      Negras
+					    </label>
+					</div>
+				</div>
+			</div>		
+    </div>
+	</div>
+
+  <script src="/js/clock.js"></script>
+  <script src="/js/materialize.min.js"></script>
+  <script src="/js/ControllerBoard.js"></script>
+  <script src="/js/ControllerSocket.js"></script>
+  <script src="/js/flipclock.js"></script>  
+</body>
+</html>
+
+
