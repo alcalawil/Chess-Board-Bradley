@@ -42,11 +42,12 @@ var SendRequest = function(argument) {
    var data = {};
    data.title = "title";
    data.message = "message";
+   //console.log('URL: ' + window.location.href);
    $.ajax({
       type: 'POST',
       data: JSON.stringify(data),
       contentType: 'application/json',
-      url: 'http://localhost:8095/endpoint',
+      url: window.location.href +'endpoint',
       success: function(data) {
             console.log('success');
             $("#status").text('Conectado');

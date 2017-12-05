@@ -1,0 +1,42 @@
+.flex{
+  		display: flex;
+  	}
+  	.flex-center{
+  		justify-content: center;
+  	}
+  	body{
+  		background: #ddd;
+  	}
+  	.container{
+  		padding-top: 5%;
+  	}
+
+input[type=text] {
+    width: 100px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    background: transparent;  
+
+}
+
+input[type=text]:focus {
+    border: 3px solid #555;
+    background: white;
+    }
+
+  input[type=text]:hover {
+    
+    background: white;
+    }
+
+
+.etiqueta  {
+  font-size:24px;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}

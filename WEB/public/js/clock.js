@@ -13,7 +13,7 @@ $(document).ready(function() {
         }
     });
 		    
-    clockBlanco.setTime(300);//time seconds here (connect sockets time here)
+    clockBlanco.setTime(1800);//time seconds here (connect sockets time here)
     clockBlanco.setCountdown(true);
     //clockBlanco.start();
 
@@ -27,7 +27,7 @@ $(document).ready(function() {
         }
     });
             
-    clockNegro.setTime(300);//time seconds here (connect sockets time here)
+    clockNegro.setTime(1800);//time seconds here (connect sockets time here)
     clockNegro.setCountdown(true);
     //clockNegro.start();
 });

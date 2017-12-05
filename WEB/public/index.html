@@ -10,32 +10,21 @@
   <link rel="stylesheet" type="text/css" href="/css/flipclock.css">
   <link rel="stylesheet" href="/css/materialize.min.css" />
   <link rel='shortcut icon' type='image/x-icon' href='/img/favicon.ico' />
-  <style type="text/css">
-  	.flex{
-  		display: flex;
-  	}
-  	.flex-center{
-  		justify-content: center;
-  	}
-  	body{
-  		background: #ddd;
-  	}
-  	.container{
-  		padding-top: 5%;
-  	}
-  </style>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
 
 </head>
 <body>
 	<div class="container">
 		<div class="row">
 			<div class="col s12 m6">
+        <div id="status">Desconectado</div>
+       
+        <br><br><br><br>
 				<div id="clockNegro" class="clock" style="margin:2em;"></div>
-        <br><br><br><br><br><br><br>
-          <input type="button" value ="Start" id="start">
-          <input type="button" value ="Pause" id="stop"><br>
-          <div id="status">Desconectado</div>
-        <br><br><br><br><br><br><br>
+        <br><br><br><br><br>
+          
+          
+        <br>
 
         <div id="clockBlanco" class="clock" style="margin:2em;"></div>
         <div class="row">
@@ -48,10 +37,17 @@
 
 			<div class="col s12 m6">
 				<div class="contenedor-board">
-          <h2>Jugador 1</h2>
+
+          <input type="text" id="jugador1" class="nombrejugador" value="" placeholder="Introduzca un nombre">
+          <div id="etiqueta1" class="etiqueta"><p>Jugador 1</p></div>
+
 					<div id="board" style="width: 400px">this</div>
-          <h2>Jugador 2</h2>
-					<h1>Orientación</h1>
+          
+          <div  id="etiqueta2" class="etiqueta"><p>Jugador 2</p></div>
+          <input type="text" id="jugador2" class="nombrejugador" value="" placeholder="Introduzca un nombre">
+          
+
+					<h5>Orientación</h5>
 					<div class="switch" >
 					    <label>
 					      Blancas
@@ -70,6 +66,7 @@
   <script src="/js/ControllerBoard.js"></script>
   <script src="/js/ControllerSocket.js"></script>
   <script src="/js/flipclock.js"></script>  
+  <script src="/js/ManejoDOM.js"></script>  
 </body>
 </html>
 
