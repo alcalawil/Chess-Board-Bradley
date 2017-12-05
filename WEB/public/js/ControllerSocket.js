@@ -1,26 +1,67 @@
+var socket = io.connect();
+socket.on('field', function(data) {
+   console.log(data);
+   var vPrimerCaracter = data.substring(0, 1);
+   if (data != null && vPrimerCaracter == "R") {
+      var Reloj = data.replace(vPrimerCaracter, "");
 
-  var socket = io.connect();
-  socket.on('field', function (data) {
-    console.log(data);
-    var vPrimerCaracter = data.substring(0,1);
-    if(data != null &&  vPrimerCaracter == "R") {
-      var Reloj = data.replace(vPrimerCaracter,"");
-      MostrarReloj(Reloj);
-    } else {
+   } else {
       Interpretar(data);
-    }
-  });
+   }
+});
+//Events 
+socket.on('inicial', function(data) {
+   console.log("Inicial " + data);
+   ActualizarPosicion(data);
+});
 
-  function MostrarReloj(reloj) {
-    var TiempoEnSegundos = reloj.split(';');
-    clockBlanco.setTime(TiempoEnSegundos[0]);
-    clockNegro.setTime(TiempoEnSegundos[1]);
-  }
+socket.on('jugada', function(data) {
+   console.log(data);
+   ActualizarPosicion(data);
+});
+
+socket.on('casilla', function(data) {
+   console.log(data);
+   Remarcar(data);
+});
+
+socket.on('reloj', function(data) {
+   console.log(data);
+   MostrarReloj(data);
+});
 
 
 
-  $(document).ready(function() {
-        	socket.on('connect', function(data) {
-        		socket.emit('join','Hello World');
-        	});
-  });
+function MostrarReloj(reloj) {
+   var TiempoEnSegundos = reloj.split(';');
+   clockBlanco.setTime(TiempoEnSegundos[0]);
+   clockNegro.setTime(TiempoEnSegundos[1]);
+}
+
+var SendRequest = function(argument) {
+   var data = {};
+   data.title = "title";
+   data.message = "message";
+   $.ajax({
+      type: 'POST',
+      data: JSON.stringify(data),
+      contentType: 'application/json',
+      url: 'http://localhost:8095/endpoint',
+      success: function(data) {
+            console.log('success');
+            $("#status").text('Conectado');
+         }, 
+      error: function() { 
+         console.log('error');
+         $("#status").text('Desconectado');
+      }
+   });
+}
+
+$(document).ready(function() {
+   socket.on('connect', function(data) {
+      socket.emit('join', 'Hello World');
+   });
+});
+
+window.setInterval(SendRequest, 3000);

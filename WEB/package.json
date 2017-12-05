@@ -5,6 +5,7 @@
 	"main": "index.js",
 	"author": "Wilfredo Alcala",
 	"dependencies": {
+		"chess.js": "^0.10.2",
 		"express": "^4.16.2",
 		"socket.io": "^2.0.3"
 	}
