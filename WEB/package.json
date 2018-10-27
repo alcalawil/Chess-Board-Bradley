@@ -1,8 +1,8 @@
 {
-	"name": "alcalachess",
+	"name": "Chess Board ",
 	"version": "1.0.0",
-	"description": "Trabajo de grado wilfredo alcala",
-	"main": "index.js",
+	"description": "This project was made using a raspberry pi as hardware, but in this, the hardware can be simulated using simulator.exe",
+	"main": "server.js",
 	"author": "Wilfredo Alcala",
 	"dependencies": {
 		"chess.js": "^0.10.2",
